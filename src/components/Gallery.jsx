@@ -1,0 +1,22 @@
+import { useContext } from "react";
+import { PhotoContext } from "../context/PhotosContext";
+import IconHeart from "./IconHeart";
+
+const Gallery = () => {
+
+  const { photoData } = useContext(PhotoContext);
+
+  return <div className="gallery grid-columns-5 p-3">
+    {photoData === null ? (
+      <h1>Loading...</h1>
+    ) : (
+      photoData.map((photos) => (
+        <div style={{backgroundImage: `url(${photos.src.original})`}} className="photo" key={photos.key}>
+          <IconHeart />
+        </div>)
+      )
+    )}
+
+  </div>;
+};
+export default Gallery;
