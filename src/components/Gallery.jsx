@@ -10,10 +10,10 @@ const Gallery = () => {
     {photoData === null ? (
       <h1>Loading...</h1>
     ) : (
-      photoData.map((photos) => (
-        <div style={{backgroundImage: `url(${photos.src.original})`}} className="photo" key={photos.id}>
-          <IconHeart filled={photos.liked}/>
-          {photos.alt}
+      photoData.map((photo) => (
+        <div style={{backgroundImage: `url(${photo.src.original})`}} className="photo" key={photo.id}>
+          <IconHeart filled = {photo.liked} photoId = {photo.id}/>
+          {photo.alt}
         </div>)
       )
     )}
