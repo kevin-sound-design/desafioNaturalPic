@@ -11,8 +11,9 @@ const Gallery = () => {
       <h1>Loading...</h1>
     ) : (
       photoData.map((photos) => (
-        <div style={{backgroundImage: `url(${photos.src.original})`}} className="photo" key={photos.key}>
-          <IconHeart />
+        <div style={{backgroundImage: `url(${photos.src.original})`}} className="photo" key={photos.id}>
+          <IconHeart filled={photos.liked}/>
+          {photos.alt}
         </div>)
       )
     )}
